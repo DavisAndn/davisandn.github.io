@@ -103,3 +103,145 @@ footer {
     color: var(--muted);
     font-size: 0.9rem;
 }
+
+footer nav {
+    gap: 8px 20px;
+    margin-top: 0;
+}
+
+.legal {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* The product page */
+
+.headline {
+    font-size: clamp(1.75rem, 1.2rem + 2.6vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 2rem 0 0;
+}
+
+.headline span {
+    display: block;
+    color: var(--link);
+}
+
+.lede {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+
+.get {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 24px;
+    margin-top: 1.75rem;
+}
+
+/* Apple's badge as Apple provides it: at least 40 px tall, with a quarter of its height clear around it. */
+.badge {
+    display: block;
+    flex: none;
+}
+
+.badge img {
+    display: block;
+    width: auto;
+    height: 52px;
+}
+
+.price {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Side by side on wide screens; on a phone they scroll sideways, like the App Store's. */
+.shots {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 1fr);
+    gap: 14px;
+    margin: 2.5rem -20px 0;
+    padding: 0 20px 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+}
+
+.shots:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+.shots img,
+.duo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px var(--rule);
+}
+
+.shots img {
+    scroll-snap-align: start;
+}
+
+.duo {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 32px;
+    align-items: center;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    margin: 1rem 0 0;
+    border-top: 1px solid var(--rule);
+}
+
+.facts dt,
+.facts dd {
+    margin: 0;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.facts dt {
+    font-weight: 600;
+    padding-right: 1rem;
+}
+
+.cta {
+    margin-top: 2.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .duo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .duo img {
+        max-width: 240px;
+        justify-self: center;
+    }
+
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .facts dt {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .facts dd {
+        padding-top: 0.15rem;
+    }
+}
